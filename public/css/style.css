@@ -1,0 +1,104 @@
+
+body {
+width:1024px; 
+    background-color:#ccc;
+    background-image: url("images/freakout_logo_simple_RGB.jpg");
+    background-repeat: repeat-y;
+    background-position: left top;
+    background-attachment:fixed; 
+ 
+}
+
+div.disc { 
+    color: #444; 
+    font-size:25px;
+    margin: 10px 0 0 280px;  
+    width:600px;
+}
+
+#top ul { 
+margin: 0 0 0 50px; 
+padding :0; 
+list-style-type : none; 
+
+}
+#top li { 
+float:left;
+display : inline; 
+padding :0; 
+margin:0; 
+}
+#top a {display:block; 
+border:1px solid #aac;
+background-color:#fda;
+opacity: 0.85;
+font-size:45px;
+padding:0.1em 0 0.1em 0.7em;
+text-decoration:none;
+color:#557;
+width:5.2em; 
+margin:12px 12px;
+height:4.0em;
+}
+#top a:hover {
+display:block; 
+border:1px solid #aca;
+background-color:#ded;
+font-size:45px;
+padding:0.1em 0 0.1em 0.7em;
+text-decoration:none;
+color:#575;
+height:4.0em;
+}
+
+
+#akasa ul { 
+margin: 0; 
+padding :0; 
+list-style-type : none; 
+}
+#akasa li { 
+display : inline; 
+padding :0; 
+margin:0; 
+}
+#akasa a {display:block; 
+border:1px solid #aac;
+background-color:#fda;
+opacity: 0.9;
+font-size:18px;
+padding:0.1em 0 0.1em 0.7em;
+text-decoration:none;
+color:#557;
+width:90%; 
+margin:20px 0px;
+height:3.0em;
+}
+#akasa a:hover {
+display:block; 
+border:1px solid #aca;
+background-color:#ded;
+font-size:18px;
+padding:0.1em 0 0.1em 0.7em;
+text-decoration:none;
+color:#575;
+height:3.0em;
+}
+
+
+#call { 
+margin: 0; 
+padding :0; 
+list-style-type : none;
+display:block; 
+border:1px solid #aac;
+background-color:#fda;
+opacity: 0.85;
+font-size:25px;
+padding:0.1em 0 0.1em 0.7em;
+text-decoration:none;
+color:#557;
+width:90%; 
+margin:6px 6px;
+height:6.5em;
+}
