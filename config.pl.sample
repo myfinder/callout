@@ -2,7 +2,8 @@ use strict;
 use warinigs;
 
 my $conf = {
-    auth_token = 'hipchat_auth_token',
-    room       = 'hipchat_callout_room_name',
-    url        = "https://api.hipchat.com/v2/room/$room/notification?auth_token=$auth_token",
+    auth_token       = 'hipchat_auth_token',
+    room             = 'hipchat_callout_room_name',
+    notification_url = "https://api.hipchat.com/v2/room/$room/notification?auth_token=$auth_token",
+    member_list_url  = "https://api.hipchat.com/v1/users/list?format=json&auth_token=$auth_token",
 }
