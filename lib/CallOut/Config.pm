@@ -10,7 +10,7 @@ our @EXPORT_OK = qw/config/;
     sub config() {
         $config //= do {
             my $script_dir = $ENV{CALLOUT_CONFIG_PATH} || dirname $0;
-            do "$script_dir/config.pl";
+            do "$script_dir/config.pl" or die "$script_dir/config.pl" . $!;
         }
     }
 }

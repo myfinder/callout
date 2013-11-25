@@ -5,39 +5,40 @@ use utf8;
 
 use Kossy;
 use LWP::UserAgent;
-use JSON;
+use JSON::XS;
 use CallOut::Config qw/config/;
+use CallOut::Api::HipChat;
 
 get '/members' => sub {
     my ($self, $c) = @_;
+   
+    my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
 
-    my $ua = LWP::UserAgent->new;
-    my $url = config->{'member_list_url'} . config->{'auth_token'};
-    my $req = HTTP::Request->new(GET => $url);
-    $req->header('Host' => 'api.hipchat.com');
-    my $res = $ua->request($req);
+    my $users; 
+    eval {
+        $users = $hipchat_client->get_allow_users();
+    };
+    if($@) {
+        $c->render_json({ result => 0 });
+    }
 
-    my $list = decode_json($res->content);
-
-    $c->render_json($list);
+    $c->render_json($users);
 };
 
 post '/message' => sub {
-    my ($self, $c) = @_;
+    my ($self,$c) = @_;
 
-    my $ua = LWP::UserAgent->new;
-    my $url = config->{'notification_url'} . config->{'auth_token'};
-    my $req = HTTP::Request->new(POST => $url);
-    my $mention_name = $c->req->param('mention_name');
-    #my $content = encode_json {  message => "ほげ さんに来客です" };
-    my $content = "room_id=352440&from=Alerts&message=dareka+kita";
-    #$req->header('Content-Type' => 'application/json');
-    $req->header('Content-Type' => 'application/x-www-form-urlencoded');
-    $req->content($content);
-    my $res = $ua->request($req);
+    my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
 
-    warn $res;
+    eval {
+        $hipchat_client->send_room_notification({ room => config->{room}, message => $c->req->param('message') //'' });
+    };
+
+    if($@) {
+        $c->render_json({ result => 0 });
+    }
+
+    $c->render_json({ result => 1 });
 };
 
 1;
-__END__
