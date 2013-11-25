@@ -18,7 +18,7 @@ use constant GET_ALL_USERS_URL          => "https://api.hipchat.com/v2/user?form
 
 sub client {
     my $self = shift;        
-    $self->{_client} //= LWP::UserAgent->new();
+    $self->{_client} //= LWP::UserAgent->new( agent => __PACKAGE__ );
 }
 
 sub send_room_notification {
