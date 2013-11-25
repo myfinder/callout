@@ -14,7 +14,7 @@ use URI;
 use URI::QueryParam;
 
 use constant SEND_ROOM_NOTIFICATION_URL => "https://api.hipchat.com/v2/room/%s/notification?auth_token=%s";
-use constant GET_ALLOW_USERS_URL        => "https://api.hipchat.com/v2/user?format=json&auth_token=%s";
+use constant GET_ALL_USERS_URL          => "https://api.hipchat.com/v2/user?format=json&auth_token=%s";
 
 sub client {
     my $self = shift;        
@@ -44,11 +44,11 @@ sub send_room_notification {
     }
 }
 
-sub get_allow_users {
+sub get_all_users {
     my ($self,$args) = @_;
 
     my $uri = URI->new(
-        sprintf(GET_ALLOW_USERS_URL,$self->auth_token)
+        sprintf(GET_ALL_USERS_URL,$self->auth_token)
     );
     for my $name (qw/start-index max-results include-deleted/ ) {
         if( $args->{$name} ) {
@@ -88,5 +88,5 @@ __END__
     );
 
     $hc->send_room_notification({ room => config->{room}, message => "test!"});
-    my $users = $hc->get_allow_users();
+    my $users = $hc->get_all_users();
     warn Dumper $users;

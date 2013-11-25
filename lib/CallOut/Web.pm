@@ -9,14 +9,16 @@ use Kossy;
 use LWP::UserAgent;
 use JSON;
 
+
+my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
+
+
 get '/members' => sub {
     my ($self, $c) = @_;
-   
-    my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
 
     my $users; 
     eval {
-        $users = $hipchat_client->get_allow_users();
+        $users = $hipchat_client->get_all_users();
     };
 
     if($@) {
@@ -28,8 +30,6 @@ get '/members' => sub {
 
 post '/message' => sub {
     my ($self,$c) = @_;
-
-    my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
 
     eval {
         $hipchat_client->send_room_notification({ room => config->{room}, message => $c->req->param('message') //'' });
