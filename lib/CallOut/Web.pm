@@ -9,6 +9,12 @@ use JSON::XS;
 use CallOut::Config qw/config/;
 use CallOut::Api::HipChat;
 
+get '/' => sub {
+    my ($self, $c) = @_;
+
+    $c->render('index.xt');
+};
+
 get '/members' => sub {
     my ($self, $c) = @_;
    
