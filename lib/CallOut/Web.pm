@@ -12,7 +12,7 @@ use CallOut::Api::HipChat;
 get '/' => sub {
     my ($self, $c) = @_;
 
-    $c->render('index.xt');
+    $c->render('index.tx');
 };
 
 get '/members' => sub {
