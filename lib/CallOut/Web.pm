@@ -12,7 +12,14 @@ use CallOut::Api::HipChat;
 get '/' => sub {
     my ($self, $c) = @_;
 
-    $c->render('index.xt');
+    my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
+
+    my $users = []; 
+    eval {
+        $users = $hipchat_client->get_allow_users();
+    };
+
+    $c->render('index.tx', { users => $users });
 };
 
 get '/members' => sub {

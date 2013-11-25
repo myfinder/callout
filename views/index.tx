@@ -1,25 +1,19 @@
 : cascade base
 : around content -> {
     <ul id="akasa">
-    
+: for $users -> $user {    
     <li>
-        <a href="javascript:void(0)" onclick="redirect('?mode=call&id=6');" onmousedown="play(this);">
-            飯村　洋平 
+        <form action="/message" method="post">
+            <input type="hidden" name="message" value="<: $user[name] :>さん来客です" />
+            <a href="javascript:submit()"><: $user[name] :></a> 
+            <!--
             <span class="yomi">Youhei Iimura</span><br />
             <span class="team">[DSO]</span>
             <span class="class">(アカウントエグゼクティブ チームリード)</span>
-            
-        </a>
+            -->
+        </form>
     </li>
-    <li>
-        <a href="javascript:void(0)" onclick="redirect('?mode=call&id=12');" onmousedown="play(this);">
-            石瀬　賢一 
-            <span class="yomi">Kenichi Ishise</span><br />
-            <span class="team">[DSO]</span>
-            <span class="class">(アカウントエグゼクティブ)</span>
-            
-        </a>
-    </li>
+: }
     </ul>
 : }
 
