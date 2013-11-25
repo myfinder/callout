@@ -2,7 +2,7 @@
 body {
 width:1024px; 
     background-color:#ccc;
-    background-image: url("images/freakout_logo_simple_RGB.jpg");
+    background-image: url("/img/freakout_logo_simple_RGB.jpg");
     background-repeat: repeat-y;
     background-position: left top;
     background-attachment:fixed; 

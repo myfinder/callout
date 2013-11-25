@@ -19,7 +19,7 @@ get '/' => sub {
         $users = $hipchat_client->get_allow_users();
     };
 
-    $c->render('index.tx', { users => $users });
+    $c->render('index.tx', { users => $users->{'items'} });
 };
 
 get '/members' => sub {
@@ -32,7 +32,7 @@ get '/members' => sub {
         $users = $hipchat_client->get_allow_users();
     };
     if($@) {
-        $c->render_json({ result => 0 });
+        return $c->render_json({ result => 0 });
     }
 
     $c->render_json($users);
@@ -48,10 +48,10 @@ post '/message' => sub {
     };
 
     if($@) {
-        $c->render_json({ result => 0 });
+        return $c->render('message.tx', {result => 0});
     }
 
-    $c->render_json({ result => 1 });
+    $c->render('message.tx', {result => 1});
 };
 
 1;

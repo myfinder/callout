@@ -3,9 +3,9 @@
     <ul id="akasa">
 : for $users -> $user {    
     <li>
-        <form action="/message" method="post">
-            <input type="hidden" name="message" value="<: $user[name] :>さん来客です" />
-            <a href="javascript:submit()"><: $user[name] :></a> 
+        <form action="/message" method="post" id="<: $user['id'] :>">
+            <input type="hidden" name="message" value="<: $user['name'] :>さん来客です" />
+            <a href="javascript:$('#<: $user['id'] :>').submit()"><: $user['name'] :></a> 
             <!--
             <span class="yomi">Youhei Iimura</span><br />
             <span class="team">[DSO]</span>

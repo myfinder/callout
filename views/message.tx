@@ -1,0 +1,12 @@
+: cascade base
+: around content -> {
+    <script type="text/javascript">
+        setTimeout(function() { location.replace('/') }, 3);
+    </script>
+: if $result == 1 {
+    <p>ただ今呼び出しています、しばらくお待ちください。</p>
+: } else {
+    <p>呼び出しに失敗しました、再度呼び出しをお試しください。</p>
+: }
+: }
+
