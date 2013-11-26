@@ -16,6 +16,9 @@ use URI::QueryParam;
 use constant SEND_ROOM_NOTIFICATION_URL => "https://api.hipchat.com/v2/room/%s/notification?auth_token=%s";
 use constant GET_ALL_USERS_URL          => "https://api.hipchat.com/v2/user?format=json&auth_token=%s";
 use constant VIEW_USER_URL              => "https://api.hipchat.com/v2/user/%s?auth_token=%s";
+use constant VIEW_HISTORY_URL           => "https://api.hipchat.com/v2/room/%s/history?auth_token=%s"; 
+use constant GET_ALL_ROOMS_URL          => "https://api.hipchat.com/v2/room?auth_token=%s";
+use constant GET_ROOM_URL               => "https://api.hipchat.com/v2/room/%s?auth_token=%s";
 
 sub client {
     my $self = shift;        
@@ -66,12 +69,63 @@ sub get_all_users {
     return decode_json($res->decoded_content);
 }
 
+sub get_all_rooms {
+    my ($self,$args) = @_;
+
+    my $uri = URI->new(
+        sprintf(GET_ALL_ROOMS_URL,$self->auth_token)
+    );
+    for my $name (qw/start-index max-results/ ) {
+        if( $args->{$name} ) {
+            $uri->query_param_append($name,$args->{$name});
+        }
+    }
+   
+    my $res = $self->client->get($uri->as_string);
+
+    unless( $res->is_success ) {
+        die $res->status_line;         
+    }
+
+    return decode_json($res->decoded_content);
+}
+
 sub view_user {
     my ($self,$args) = @_;
 
     my $user_id = $args->{user_id} or die 'require user id';
 
     my $res = $self->client->get(sprintf(VIEW_USER_URL,$user_id,$self->auth_token));
+
+    unless( $res->is_success ) {
+        warn $res->decoded_content;
+        die $res->status_line;         
+    }
+
+    return decode_json($res->decoded_content);
+}
+
+sub view_history {
+    my ($self,$args) = @_;
+
+    my $room_id = $args->{room_id} or die 'require room id';
+
+    my $res = $self->client->get(sprintf(VIEW_HISTORY_URL,$room_id,$self->auth_token));
+
+    unless( $res->is_success ) {
+        warn $res->decoded_content;
+        die $res->status_line;         
+    }
+
+    return decode_json($res->decoded_content);
+}
+
+sub get_room {
+    my ($self,$args) = @_;
+
+    my $room_id = $args->{room_id} or die 'require room id';
+
+    my $res = $self->client->get(sprintf(GET_ROOM_URL,$room_id,$self->auth_token));
 
     unless( $res->is_success ) {
         warn $res->decoded_content;
