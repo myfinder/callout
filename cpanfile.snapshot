@@ -1,5 +1,52 @@
 # carton snapshot format: version 1.0
 DISTRIBUTIONS
+  AnyEvent-7.05
+    pathname: M/ML/MLEHMANN/AnyEvent-7.05.tar.gz
+    provides:
+      AE undef
+      AE::Log::COLLECT undef
+      AE::Log::FILTER undef
+      AE::Log::LOG undef
+      AnyEvent 7.05
+      AnyEvent::Base 7.05
+      AnyEvent::CondVar 7.05
+      AnyEvent::CondVar::Base 7.05
+      AnyEvent::DNS undef
+      AnyEvent::Debug undef
+      AnyEvent::Debug::Backtrace undef
+      AnyEvent::Debug::Wrap undef
+      AnyEvent::Debug::Wrapped undef
+      AnyEvent::Debug::shell undef
+      AnyEvent::Handle undef
+      AnyEvent::IO undef
+      AnyEvent::IO::IOAIO undef
+      AnyEvent::IO::Perl undef
+      AnyEvent::Impl::Cocoa undef
+      AnyEvent::Impl::EV undef
+      AnyEvent::Impl::Event undef
+      AnyEvent::Impl::EventLib undef
+      AnyEvent::Impl::FLTK undef
+      AnyEvent::Impl::Glib undef
+      AnyEvent::Impl::IOAsync undef
+      AnyEvent::Impl::Irssi undef
+      AnyEvent::Impl::POE undef
+      AnyEvent::Impl::Perl undef
+      AnyEvent::Impl::Qt undef
+      AnyEvent::Impl::Qt::Io undef
+      AnyEvent::Impl::Qt::Timer undef
+      AnyEvent::Impl::Tk undef
+      AnyEvent::Log undef
+      AnyEvent::Log::COLLECT undef
+      AnyEvent::Log::Ctx undef
+      AnyEvent::Log::FILTER undef
+      AnyEvent::Log::LOG undef
+      AnyEvent::Loop undef
+      AnyEvent::Socket undef
+      AnyEvent::Strict undef
+      AnyEvent::TLS undef
+      AnyEvent::Util undef
+    requirements:
+      ExtUtils::MakeMaker 0
   Apache-LogFormat-Compiler-0.13
     pathname: K/KA/KAZEBURO/Apache-LogFormat-Compiler-0.13.tar.gz
     provides:
@@ -39,6 +86,55 @@ DISTRIBUTIONS
       Module::Build 0.38
       URI::Escape 0
       perl 5.008005
+  Coro-6.33
+    pathname: M/ML/MLEHMANN/Coro-6.33.tar.gz
+    provides:
+      Coro 6.33
+      Coro::AIO 6.33
+      Coro::AnyEvent 6.33
+      Coro::BDB 6.33
+      Coro::Channel 6.33
+      Coro::Debug 6.33
+      Coro::EV 6.33
+      Coro::Event 6.33
+      Coro::Handle 6.33
+      Coro::Handle::FH 6.33
+      Coro::LWP 6.33
+      Coro::LWP::Socket 6.33
+      Coro::MakeMaker 6.33
+      Coro::RWLock 6.33
+      Coro::Select 6.33
+      Coro::Semaphore 6.33
+      Coro::SemaphoreSet 6.33
+      Coro::Signal 6.33
+      Coro::Socket 6.33
+      Coro::Specific 6.33
+      Coro::State 6.33
+      Coro::Storable 6.33
+      Coro::Timer 6.33
+      Coro::Timer::Timeout 6.33
+      Coro::Util 6.33
+    requirements:
+      AnyEvent 5
+      ExtUtils::MakeMaker 0
+      Guard 0.5
+      Scalar::Util 0
+      Storable 2.15
+      common::sense 0
+  Corona-0.1004
+    pathname: M/MI/MIYAGAWA/Corona-0.1004.tar.gz
+    provides:
+      Corona 0.1004
+      Corona::Server undef
+      Plack::Handler::Corona undef
+      Plack::Server::Coro 0.1002
+    requirements:
+      Coro 0
+      ExtUtils::MakeMaker 6.42
+      Net::Server::Coro 0.5
+      Plack 0.99
+      Test::More 0
+      perl 5.008001
   Data-MessagePack-0.48
     pathname: G/GF/GFUJI/Data-MessagePack-0.48.tar.gz
     provides:
@@ -94,47 +190,6 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Test 0
       perl 5.008
-  ExtUtils-MakeMaker-6.82
-    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-6.82.tar.gz
-    provides:
-      DynaLoader 6.82
-      ExtUtils::Command::MM 6.82
-      ExtUtils::Liblist 6.82
-      ExtUtils::Liblist::Kid 6.82
-      ExtUtils::MM 6.82
-      ExtUtils::MM_AIX 6.82
-      ExtUtils::MM_Any 6.82
-      ExtUtils::MM_BeOS 6.82
-      ExtUtils::MM_Cygwin 6.82
-      ExtUtils::MM_DOS 6.82
-      ExtUtils::MM_Darwin 6.82
-      ExtUtils::MM_MacOS 6.82
-      ExtUtils::MM_NW5 6.82
-      ExtUtils::MM_OS2 6.82
-      ExtUtils::MM_QNX 6.82
-      ExtUtils::MM_UWIN 6.82
-      ExtUtils::MM_Unix 6.82
-      ExtUtils::MM_VMS 6.82
-      ExtUtils::MM_VOS 6.82
-      ExtUtils::MM_Win32 6.82
-      ExtUtils::MM_Win95 6.82
-      ExtUtils::MY 6.82
-      ExtUtils::MakeMaker 6.82
-      ExtUtils::MakeMaker::Config 6.82
-      ExtUtils::MakeMaker::_version 6.82
-      ExtUtils::Mkbootstrap 6.82
-      ExtUtils::Mksymlists 6.82
-      ExtUtils::testlib 6.82
-      MM 6.82
-      MY 6.82
-      in 6.82
-    requirements:
-      Data::Dumper 0
-      DirHandle 0
-      File::Basename 0
-      File::Spec 0.8
-      Pod::Man 0
-      perl 5.006
   File-Copy-Recursive-0.38
     pathname: D/DM/DMUEY/File-Copy-Recursive-0.38.tar.gz
     provides:
@@ -181,6 +236,12 @@ DISTRIBUTIONS
       Filesys::Notify::Simple 0.12
     requirements:
       ExtUtils::MakeMaker 6.30
+  Guard-1.022
+    pathname: M/ML/MLEHMANN/Guard-1.022.tar.gz
+    provides:
+      Guard 1.022
+    requirements:
+      ExtUtils::MakeMaker 0
   HTML-FillInForm-Lite-1.13
     pathname: G/GF/GFUJI/HTML-FillInForm-Lite-1.13.tar.gz
     provides:
@@ -384,6 +445,14 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0
+  JSON-XS-3.01
+    pathname: M/ML/MLEHMANN/JSON-XS-3.01.tar.gz
+    provides:
+      JSON::XS 3.01
+    requirements:
+      ExtUtils::MakeMaker 0
+      Types::Serialiser 0
+      common::sense 0
   Kossy-0.27
     pathname: K/KA/KAZEBURO/Kossy-0.27.tar.gz
     provides:
@@ -527,6 +596,49 @@ DISTRIBUTIONS
       MIME::Base64 0
       Test::More 0.60_01
       perl 5.005
+  Net-Server-2.007
+    pathname: R/RH/RHANDOM/Net-Server-2.007.tar.gz
+    provides:
+      Net::Server 2.007
+      Net::Server::Daemonize 0.06
+      Net::Server::Fork undef
+      Net::Server::HTTP undef
+      Net::Server::INET undef
+      Net::Server::INET::Handle undef
+      Net::Server::Log::Log::Log4perl undef
+      Net::Server::Log::Sys::Syslog undef
+      Net::Server::MultiType undef
+      Net::Server::Multiplex undef
+      Net::Server::Multiplex::MUX undef
+      Net::Server::PSGI undef
+      Net::Server::PreFork undef
+      Net::Server::PreForkSimple undef
+      Net::Server::Proto undef
+      Net::Server::Proto::SSL undef
+      Net::Server::Proto::SSLEAY undef
+      Net::Server::Proto::TCP undef
+      Net::Server::Proto::UDP undef
+      Net::Server::Proto::UNIX undef
+      Net::Server::Proto::UNIXDGRAM undef
+      Net::Server::SIG 0.03
+      Net::Server::Single undef
+      Net::Server::TiedHandle 2.007
+    requirements:
+      ExtUtils::MakeMaker 0
+      IO::Socket 0
+      POSIX 0
+      Socket 0
+  Net-Server-Coro-1.3
+    pathname: A/AL/ALEXMV/Net-Server-Coro-1.3.tar.gz
+    provides:
+      Net::Server::Coro 1.3
+      Net::Server::Proto::Coro undef
+      Net::Server::Proto::Coro::FH undef
+    requirements:
+      AnyEvent 0
+      Coro 0
+      ExtUtils::MakeMaker 6.36
+      Net::Server 2
   Number-Format-1.73
     pathname: W/WR/WRW/Number-Format-1.73.tar.gz
     provides:
@@ -845,6 +957,16 @@ DISTRIBUTIONS
       constant 0
       strict 0
       warnings 0
+  Types-Serialiser-0.03
+    pathname: M/ML/MLEHMANN/Types-Serialiser-0.03.tar.gz
+    provides:
+      JSON::PP::Boolean 0.03
+      Types::Serialiser 0.03
+      Types::Serialiser::BooleanBase 0.03
+      Types::Serialiser::Error 0.03
+    requirements:
+      ExtUtils::MakeMaker 0
+      common::sense 0
   URI-1.60
     pathname: G/GA/GAAS/URI-1.60.tar.gz
     provides:
@@ -930,6 +1052,12 @@ DISTRIBUTIONS
       Fcntl 0
       URI 1.10
       perl 5.008001
+  common-sense-3.72
+    pathname: M/ML/MLEHMANN/common-sense-3.72.tar.gz
+    provides:
+      common::sense 3.72
+    requirements:
+      ExtUtils::MakeMaker 0
   libwww-perl-6.05
     pathname: G/GA/GAAS/libwww-perl-6.05.tar.gz
     provides:

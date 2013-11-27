@@ -17,7 +17,7 @@ get '/' => sub {
 
     my $users = []; 
     eval {
-        $users = $hipchat_client->get_allow_users();
+        $users = $hipchat_client->get_all_users();
     };
 
     $c->render('index.tx', { users => $users->{'items'} });
