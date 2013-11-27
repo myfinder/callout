@@ -7,7 +7,6 @@ use Kossy;
 use JSON::XS;
 use CallOut::Config qw/config/;
 use CallOut::Api::HipChat;
-use JSON;
 use LWP::UserAgent;
 
 my $hipchat_client = CallOut::Api::HipChat->new( auth_token => config->{auth_token} );
@@ -17,8 +16,11 @@ get '/' => sub {
 
     my $users = []; 
     eval {
-        $users = $hipchat_client->get_allow_users();
+        $users = $hipchat_client->get_all_users();
     };
+    if($@) {
+        die $@;
+    }
 
     $c->render('index.tx', { users => $users->{'items'} });
 };
@@ -66,6 +68,7 @@ post '/message' => sub {
     };
 
     if($@) {
+        warn $@;
         return $c->render('message.tx', {result => 0});
     }
 
