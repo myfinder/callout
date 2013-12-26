@@ -1,0 +1,26 @@
+: cascade admin_base
+: around content -> {
+<table>
+    <tr>
+        <th>id</th>
+        <th>api_id</th>
+        <th>name</th>
+        <th>mention_name</th>
+        <th>group_id</th>
+        <th>email</th>
+        <th>modified</th>
+    </tr>
+: for $members -> $member {    
+    <tr>
+        <td><a href="/admin/member/show?member_id=<: $member['id'] :>"><: $member['id'] :></a></td>
+        <td><: $member['api_id'] :></td>
+        <td><: $member['name'] :></td>
+        <td><: $member['mention_name'] :></td>
+        <td><: $member['group_id'] :></td>
+        <td><: $member['email'] :></td>
+        <td><: $member['modified'] :></td>
+    </tr>
+: }
+</table>
+: }
+
