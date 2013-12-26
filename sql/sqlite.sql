@@ -18,6 +18,6 @@ CREATE TABLE syllabary (
 
 CREATE TABLE syllabary_member (
     syllabary_id INTEGER      NOT NULL,
-    member_id    INTEGER      NOT NULL,
+    member_id    INTEGER      NOT NULL UNIQUE,
     PRIMARY KEY (syllabary_id,member_id)
 );
