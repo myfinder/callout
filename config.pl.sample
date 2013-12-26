@@ -7,4 +7,13 @@ use warnings;
     },
     room       => '',
     auth_token => '',
+    DBI        => [
+        "dbi:SQLite:dbname=/path/to/db/callout.db",
+        '',
+        '',
+        +{
+            sqlite_unicode => 1,
+            RootClass => 'DBIx::Sunny',
+        },
+    ],
 };
