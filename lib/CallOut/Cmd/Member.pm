@@ -61,6 +61,4 @@ sub create_syllabary {
     }
 }
 
-#__PACKAGE__->update;
-__PACKAGE__->create_syllabary;
 1;
