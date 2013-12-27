@@ -1,0 +1,16 @@
+: cascade admin_base
+: around content -> {
+<table>
+    <tr>
+        <th>name</th>
+        <th>member_name</th>
+    </tr>
+: for $syllabary -> $row {    
+    <tr>
+        <td><: $row['name'] :></td>
+        <td><: $row['member_name'] :></td>
+    </tr>
+: }
+</table>
+: }
+

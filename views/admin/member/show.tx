@@ -1,0 +1,46 @@
+: cascade admin_base
+: around content -> {
+<h2><: $member['name'] :></h2>
+<table>
+    <tr>
+        <th>id</th>
+        <td><: $member['id'] :></td>
+    </tr>
+    <tr>
+        <th>api_id</th>
+        <td><: $member['api_id'] :></td>
+    </tr>
+    <tr>
+        <th>name</th>
+        <td><: $member['name'] :></td>
+    </tr>
+    <tr>
+        <th>mention_name</th>
+        <td><: $member['mention_name'] :></td>
+    </tr>
+    <tr>
+        <th>syllabary_name</th>
+        <td>
+            <form method="POST" action="/admin/member/syllabary/update">
+                <input type="text" name="syllabary_name" value="<: $member['syllabary_name'] :>" size="1">
+                <input type="hidden" name="syllabary_id" value="<: $member['syllabary_id'] :>">
+                <input type="hidden" name="member_id" value="<: $member['id'] :>">
+                <input type="submit" value="change">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>group_id</th>
+        <td><: $member['group_id'] :></td>
+    </tr>
+    <tr>
+        <th>email</th>
+        <td><: $member['email'] :></td>
+    </tr>
+    <tr>
+        <th>modified</th>
+        <td><: $member['modified'] :></td>
+    </tr>
+</table>
+: }
+
