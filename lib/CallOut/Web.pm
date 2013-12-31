@@ -92,7 +92,7 @@ get '/' => sub {
     for my $member ( @{$members} ) {
         $member->{"index"} = CallOut::MemberIndex->get_index($member->{"syllabary_name"});
         $member->{'photo_url'} =
-            $member->{'photo_url'} ? "https://s3-ap-northeast-1.amazonaws.com/" + $member->{'photo_url'} : "/img/company_logo_white.png"
+            $member->{'photo_url'} ? "https://s3-ap-northeast-1.amazonaws.com/" . $member->{'photo_url'} : "/img/company_logo_white.png"
     }
 
     $c->render('index.tx', { users => $members,
