@@ -1,104 +1,216 @@
-
+/* line 3, ../../sass/style.scss */
 body {
-width:1024px; 
-    background-color:#ccc;
-    background-image: url("/img/freakout_logo_simple_RGB.jpg");
-    background-repeat: repeat-y;
-    background-position: left top;
-    background-attachment:fixed; 
- 
+  background: rgba(0, 0, 0, 0.4);
+  background-color: #e67e22;
+  background-image: url(/img/greyzz.png);
 }
 
-div.disc { 
-    color: #444; 
-    font-size:25px;
-    margin: 10px 0 0 280px;  
-    width:600px;
+/* line 9, ../../sass/style.scss */
+form {
+  margin: 0px;
 }
 
-#top ul { 
-margin: 0 0 0 50px; 
-padding :0; 
-list-style-type : none; 
-
-}
-#top li { 
-float:left;
-display : inline; 
-padding :0; 
-margin:0; 
-}
-#top a {display:block; 
-border:1px solid #aac;
-background-color:#fda;
-opacity: 0.85;
-font-size:45px;
-padding:0.1em 0 0.1em 0.7em;
-text-decoration:none;
-color:#557;
-width:5.2em; 
-margin:12px 12px;
-height:4.0em;
-}
-#top a:hover {
-display:block; 
-border:1px solid #aca;
-background-color:#ded;
-font-size:45px;
-padding:0.1em 0 0.1em 0.7em;
-text-decoration:none;
-color:#575;
-height:4.0em;
+/* line 13, ../../sass/style.scss */
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-
-#akasa ul { 
-margin: 0; 
-padding :0; 
-list-style-type : none; 
+/* line 18, ../../sass/style.scss */
+h1.title {
+  font: 450 45px/50px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: center;
+  padding: 0 0 40px 0;
 }
-#akasa li { 
-display : inline; 
-padding :0; 
-margin:0; 
+/* line 23, ../../sass/style.scss */
+h1.title i {
+  color: #e67e22;
 }
-#akasa a {display:block; 
-border:1px solid #aac;
-background-color:#fda;
-opacity: 0.9;
-font-size:18px;
-padding:0.1em 0 0.1em 0.7em;
-text-decoration:none;
-color:#557;
-width:90%; 
-margin:20px 0px;
-height:3.0em;
-}
-#akasa a:hover {
-display:block; 
-border:1px solid #aca;
-background-color:#ded;
-font-size:18px;
-padding:0.1em 0 0.1em 0.7em;
-text-decoration:none;
-color:#575;
-height:3.0em;
+/* line 26, ../../sass/style.scss */
+h1.title .flaticon-bell:before {
+  font-size: 60px;
 }
 
+/* line 32, ../../sass/style.scss */
+h4 {
+  font-size: 20px;
+}
 
-#call { 
-margin: 0; 
-padding :0; 
-list-style-type : none;
-display:block; 
-border:1px solid #aac;
-background-color:#fda;
-opacity: 0.85;
-font-size:25px;
-padding:0.1em 0 0.1em 0.7em;
-text-decoration:none;
-color:#557;
-width:90%; 
-margin:6px 6px;
-height:6.5em;
+/* line 36, ../../sass/style.scss */
+.office_visitors {
+  padding: 0 0 20px 0;
+}
+/* line 39, ../../sass/style.scss */
+.office_visitors a {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+}
+
+/* line 46, ../../sass/style.scss */
+.staff_visitors div {
+  margin-bottom: 10px;
+}
+/* line 50, ../../sass/style.scss */
+.staff_visitors a {
+  height: 100px;
+  line-height: 80px;
+  font-size: 18px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+  background-color: #e67e22;
+}
+/* line 60, ../../sass/style.scss */
+.staff_visitors a:hover,
+.staff_visitors a:focus,
+.staff_visitors a:active {
+  background-color: #d35400;
+}
+/* line 64, ../../sass/style.scss */
+.staff_visitors .start-index {
+  font-size: 32px;
+}
+
+/* line 70, ../../sass/style.scss */
+ul#member-list :hover {
+  cursor: pointer;
+}
+
+/* line 75, ../../sass/style.scss */
+li.member-box {
+  display: none;
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) -1px 1px 0, rgba(255, 255, 255, 0.5) -1px 1px 0 inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.05) -1px 1px 0, rgba(255, 255, 255, 0.5) -1px 1px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.05) -1px 1px 0, rgba(255, 255, 255, 0.5) -1px 1px 0 inset;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  background-color: #ecf0f1;
+}
+/* line 85, ../../sass/style.scss */
+li.member-box p {
+  margin: 1px;
+}
+/* line 90, ../../sass/style.scss */
+li.member-box .photo img {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #fff;
+  background-color: #2c3e50;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  -o-border-radius: 70px;
+  border-radius: 70px;
+}
+/* line 99, ../../sass/style.scss */
+li.member-box .email {
+  padding: 0 5px 0 0;
+}
+
+/* line 104, ../../sass/style.scss */
+li.return-view-list {
+  text-align: center;
+  background-color: #95a5a6;
+}
+
+/* line 109, ../../sass/style.scss */
+.response-message {
+  position: absolute;
+  width: 320px;
+  height: 200px;
+  top: 50%;
+  left: 35%;
+  display: none;
+  z-index: 999px;
+}
+/* line 118, ../../sass/style.scss */
+.response-message .tooltip-arrow {
+  border-top-color: #27ae60 !important;
+}
+/* line 122, ../../sass/style.scss */
+.response-message .tooltip-inner {
+  width: 320px;
+  max-width: 320px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  width: 100%;
+  background-color: #27ae60;
+}
+/* line 129, ../../sass/style.scss */
+.response-message .tooltip-inner .icon {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  padding: 10px 5px 0px 10px;
+}
+/* line 133, ../../sass/style.scss */
+.response-message .tooltip-inner .text {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+}
+/* line 137, ../../sass/style.scss */
+.response-message .character {
+  position: absolute;
+  top: 55px;
+  left: 100px;
+}
+
+/* line 144, ../../sass/style.scss */
+.response-error-message {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  top: 50%;
+  left: 28%;
+  display: none;
+  z-index: 999px;
+}
+/* line 153, ../../sass/style.scss */
+.response-error-message .tooltip-inner {
+  width: 400px;
+  max-width: 400px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  width: 100%;
+  background-color: #c0392b;
+}
+
+/* line 162, ../../sass/style.scss */
+.flaticon-blowfish:before {
+  font-size: 50px;
+}
+
+/* line 165, ../../sass/style.scss */
+.flaticon-celebration:before {
+  font-size: 50px;
+}
+
+/* line 168, ../../sass/style.scss */
+.flaticon-dog4:before {
+  font-size: 50px;
+}
+
+/* line 171, ../../sass/style.scss */
+.flaticon-sheep1:before {
+  font-size: 50px;
+}
+
+/* line 174, ../../sass/style.scss */
+.flaticon-silhouette2:before {
+  font-size: 50px;
 }

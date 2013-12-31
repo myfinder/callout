@@ -1,19 +1,138 @@
 : cascade base
 : around content -> {
-    <ul id="akasa">
-: for $users -> $user {    
-    <li>
-        <form action="/message" method="post" id="<: $user['id'] :>">
-            <input type="hidden" name="message" value="<: $user['name'] :>さん来客です" />
-            <a href="javascript:$('#<: $user['id'] :>').submit()"><: $user['name'] :></a> 
-            <!--
-            <span class="yomi">Youhei Iimura</span><br />
-            <span class="team">[DSO]</span>
-            <span class="class">(アカウントエグゼクティブ チームリード)</span>
-            -->
+    <article id="office-vistiors-content">
+        <h4>弊社に御用の方</h4>
+
+        <div class="row office_visitors">
+            <div class="col-sm-6">
+                <a class="btn btn-block btn-lg btn-inverse">郵便/配達/出入り業者</a>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-block btn-lg btn-inverse">面接/インターン</a>
+            </div>
+        </div>
+    </article>
+
+    <article id="staff-vistiors-content">
+
+        <h4>弊社社員に御用の方</h4>
+
+        <div id="staff_visitors" class="staff_visitors">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="0">
+                        <span class="start-index">あ</span>行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="1" >
+                        <span class="start-index">か</span>(が)行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="2">
+                        <span class="start-index">さ</span>(ざ)行
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="3">
+                        <span class="start-index">た</span>(だ)行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="4">
+                        <span class="start-index">な</span>行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="5">
+                        <span class="start-index">は</span>(ぱ,ば)行
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="6">
+                        <span class="start-index">ま</span>行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="7">
+                        <span class="start-index">や</span>行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="8">
+                        <span class="start-index">ら</span>行
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="9">
+                        <span class="start-index">わ</span>行
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a class="btn btn-block btn-hg btn-inverse js-syllabary" data-index="-1">その他</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <div id="response-message" class="response-message">
+        <div class="tooltip fade top in">
+            <div class="tooltip-arrow"></div>
+            <div class="tooltip-inner">
+                <div class="icon">
+                    <i class="flaticon-phone13"></i>
+                </div>
+                <div class="text">
+                    ただいま呼び出しております。<br/>少々お待ちください。
+                </div>
+            </div>
+        </div>
+        <i id="character" class="character"></i>
+    </div>
+
+    <div id="response-error-message" class="response-error-message">
+        <div class="tooltip fade top in">
+            <div class="tooltip-inner">
+                <div class="text">
+                    大変申し訳ありません。呼び出しができませんでした。<br/>
+                    恐れ入りますが、xx-xxxx-xxxxまでお電話ください。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul id="member-list">
+    <li class="member-box return-view-list js-return-view-list">一覧へ戻る</a>
+
+: for $users -> $user {
+    <li class="member-box row js-member-box"  data-syllabary-index="<: $user['index']:>" data-name="<: $user['name'] :>">
+        <form method="post">
+            <input type="hidden" name="message" value="<: $user['name'] :>さんに来客です" />
+
+            <div class="photo col-sm-2">
+                <img src="<: $user['photo_url'] :>" />
+            </div>
+            <div class="info col-sm-10">
+                <span class="name"><: $user['name'] :></span>
+                <p>
+                    <span class="title"><: $user['title'] :></span>
+                    <span class="fui-mail"></span>
+                    <span class="email"><: $user['email'] :></span>
+                </p>
+            </div>
         </form>
     </li>
 : }
+    <li class="member-box return-view-list js-return-view-list">一覧へ戻る</a>
     </ul>
 : }
+
 

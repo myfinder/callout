@@ -18,3 +18,5 @@ nytprof.out
 pm_to_blib
 .*.swp
 config.pl
+.sass-cache
+.DS_Store
