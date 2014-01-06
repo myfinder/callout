@@ -33,7 +33,7 @@ h1.title .flaticon-bell:before {
 
 /* line 32, ../../sass/style.scss */
 h4 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* line 36, ../../sass/style.scss */
@@ -45,39 +45,42 @@ h4 {
   -webkit-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
+  height: 140px;
+  font-size: 24px;
+  line-height: 100px;
 }
 
-/* line 46, ../../sass/style.scss */
+/* line 49, ../../sass/style.scss */
 .staff_visitors div {
   margin-bottom: 10px;
 }
-/* line 50, ../../sass/style.scss */
+/* line 53, ../../sass/style.scss */
 .staff_visitors a {
-  height: 100px;
-  line-height: 80px;
-  font-size: 18px;
+  height: 140px;
+  line-height: 100px;
+  font-size: 24px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.05) -2px 2px 0, rgba(255, 255, 255, 0.5) -2px 2px 0 inset;
   background-color: #e67e22;
 }
-/* line 60, ../../sass/style.scss */
+/* line 63, ../../sass/style.scss */
 .staff_visitors a:hover,
 .staff_visitors a:focus,
 .staff_visitors a:active {
   background-color: #d35400;
 }
-/* line 64, ../../sass/style.scss */
+/* line 67, ../../sass/style.scss */
 .staff_visitors .start-index {
   font-size: 32px;
 }
 
-/* line 70, ../../sass/style.scss */
+/* line 73, ../../sass/style.scss */
 ul#member-list :hover {
   cursor: pointer;
 }
 
-/* line 75, ../../sass/style.scss */
+/* line 78, ../../sass/style.scss */
 li.member-box {
   display: none;
   list-style: none;
@@ -94,11 +97,11 @@ li.member-box {
   margin: 0 0 10px 0;
   background-color: #ecf0f1;
 }
-/* line 85, ../../sass/style.scss */
+/* line 88, ../../sass/style.scss */
 li.member-box p {
   margin: 1px;
 }
-/* line 90, ../../sass/style.scss */
+/* line 93, ../../sass/style.scss */
 li.member-box .photo img {
   width: 70px;
   height: 70px;
@@ -110,43 +113,44 @@ li.member-box .photo img {
   -o-border-radius: 70px;
   border-radius: 70px;
 }
-/* line 99, ../../sass/style.scss */
+/* line 102, ../../sass/style.scss */
 li.member-box .email {
   padding: 0 5px 0 0;
 }
 
-/* line 104, ../../sass/style.scss */
+/* line 107, ../../sass/style.scss */
 li.return-view-list {
   text-align: center;
   background-color: #95a5a6;
 }
 
-/* line 109, ../../sass/style.scss */
+/* line 112, ../../sass/style.scss */
 .response-message {
-  position: absolute;
-  width: 320px;
-  height: 200px;
+  position: fixed;
   top: 50%;
-  left: 35%;
+  left: 28%;
+  width: 480px;
+  height: 400px;
   display: none;
   z-index: 999px;
 }
-/* line 118, ../../sass/style.scss */
+/* line 121, ../../sass/style.scss */
 .response-message .tooltip-arrow {
   border-top-color: #27ae60 !important;
 }
-/* line 122, ../../sass/style.scss */
+/* line 125, ../../sass/style.scss */
 .response-message .tooltip-inner {
-  width: 320px;
-  max-width: 320px;
+  width: 480px;
+  max-width: 480px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: box;
   width: 100%;
   background-color: #27ae60;
+  font-size: 24px;
 }
-/* line 129, ../../sass/style.scss */
+/* line 133, ../../sass/style.scss */
 .response-message .tooltip-inner .icon {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -154,63 +158,69 @@ li.return-view-list {
   box-flex: 1;
   padding: 10px 5px 0px 10px;
 }
-/* line 133, ../../sass/style.scss */
+/* line 137, ../../sass/style.scss */
 .response-message .tooltip-inner .text {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 137, ../../sass/style.scss */
+/* line 141, ../../sass/style.scss */
 .response-message .character {
   position: absolute;
-  top: 55px;
-  left: 100px;
+  top: 105px;
+  left: 175px;
 }
 
-/* line 144, ../../sass/style.scss */
+/* line 148, ../../sass/style.scss */
 .response-error-message {
-  position: absolute;
-  width: 400px;
+  position: fixed;
+  width: 650px;
   height: 200px;
   top: 50%;
-  left: 28%;
+  left: 20%;
   display: none;
   z-index: 999px;
 }
-/* line 153, ../../sass/style.scss */
+/* line 157, ../../sass/style.scss */
 .response-error-message .tooltip-inner {
-  width: 400px;
-  max-width: 400px;
+  width: 650px;
+  max-width: 650px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: box;
   width: 100%;
+  font-size: 24px;
   background-color: #c0392b;
 }
 
-/* line 162, ../../sass/style.scss */
+/* line 167, ../../sass/style.scss */
 .flaticon-blowfish:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 165, ../../sass/style.scss */
+/* line 170, ../../sass/style.scss */
 .flaticon-celebration:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 168, ../../sass/style.scss */
+/* line 173, ../../sass/style.scss */
 .flaticon-dog4:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 171, ../../sass/style.scss */
+/* line 176, ../../sass/style.scss */
 .flaticon-sheep1:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 174, ../../sass/style.scss */
+/* line 179, ../../sass/style.scss */
 .flaticon-silhouette2:before {
+  font-size: 70px;
+}
+
+/* line 182, ../../sass/style.scss */
+.flaticon-phone13:before {
   font-size: 50px;
 }
