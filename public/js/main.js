@@ -24,7 +24,7 @@ $(function(){
         });
     });
 
-    $('.js-member-box').click(function() {
+    $('.js-call').click(function() {
         var params = $(this).find("form").serialize();
         var randnum = Math.floor( Math.random() * characters.length );
 
