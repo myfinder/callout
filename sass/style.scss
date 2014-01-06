@@ -110,11 +110,11 @@ li.return-view-list {
 }
 
 .response-message {
-    position: absolute;
-    width:320px;
-    height:200px;
-    top:50%;
-    left:35%;
+    position:fixed;
+    top: 50%;
+    left: 28%;
+    width:480px;
+    height:400px;
     display: none;
     z-index: 999px;
 
@@ -123,11 +123,12 @@ li.return-view-list {
     }
 
     .tooltip-inner {
-        width: 320px;
-        max-width: 320px;
+        width: 480px;
+        max-width: 480px;
         @include display-box;
         width: 100%;
         background-color: #27ae60;
+        font-size: 24px;
 
         .icon {
             @include box-flex(1);
@@ -139,41 +140,45 @@ li.return-view-list {
     }
     .character {
         position: absolute;
-        top: 55px;
-        left: 100px;
+        top: 105px;
+        left: 175px;
     }
 }
 
 .response-error-message {
-    position: absolute;
-    width:400px;
+    position:fixed;
+    width:650px;
     height:200px;
     top:50%;
-    left:28%;
+    left:20%;
     display: none;
     z-index: 999px;
 
     .tooltip-inner {
-        width: 400px;
-        max-width: 400px;
+        width: 650px;
+        max-width: 650px;
         @include display-box;
         width: 100%;
+        font-size: 24px;
         background-color: #c0392b;
     }
 }
 
 .flaticon-blowfish:before {
-    font-size: 50px;
+    font-size: 70px;
 }
 .flaticon-celebration:before {
-    font-size: 50px;
+    font-size: 70px;
 }
 .flaticon-dog4:before {
-    font-size: 50px;
+    font-size: 70px;
 }
 .flaticon-sheep1:before {
-    font-size: 50px;
+    font-size: 70px;
 }
 .flaticon-silhouette2:before {
+    font-size: 70px;
+}
+.flaticon-phone13:before {
     font-size: 50px;
 }

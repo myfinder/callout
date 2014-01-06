@@ -132,10 +132,10 @@ post '/message' => sub {
     };
 
     if($@) {
-        return $c->render('message.tx', {result => 0});
+        warn $@;
+        return $c->halt(500);
     }
-
-    $c->render('message.tx', {result => 1});
+    $c->halt(200);
 };
 
 post '/update_member' => sub {

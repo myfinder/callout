@@ -126,11 +126,11 @@ li.return-view-list {
 
 /* line 112, ../../sass/style.scss */
 .response-message {
-  position: absolute;
-  width: 320px;
-  height: 200px;
+  position: fixed;
   top: 50%;
-  left: 35%;
+  left: 28%;
+  width: 480px;
+  height: 400px;
   display: none;
   z-index: 999px;
 }
@@ -140,16 +140,17 @@ li.return-view-list {
 }
 /* line 125, ../../sass/style.scss */
 .response-message .tooltip-inner {
-  width: 320px;
-  max-width: 320px;
+  width: 480px;
+  max-width: 480px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: box;
   width: 100%;
   background-color: #27ae60;
+  font-size: 24px;
 }
-/* line 132, ../../sass/style.scss */
+/* line 133, ../../sass/style.scss */
 .response-message .tooltip-inner .icon {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -157,63 +158,69 @@ li.return-view-list {
   box-flex: 1;
   padding: 10px 5px 0px 10px;
 }
-/* line 136, ../../sass/style.scss */
+/* line 137, ../../sass/style.scss */
 .response-message .tooltip-inner .text {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 140, ../../sass/style.scss */
+/* line 141, ../../sass/style.scss */
 .response-message .character {
   position: absolute;
-  top: 55px;
-  left: 100px;
+  top: 105px;
+  left: 175px;
 }
 
-/* line 147, ../../sass/style.scss */
+/* line 148, ../../sass/style.scss */
 .response-error-message {
-  position: absolute;
-  width: 400px;
+  position: fixed;
+  width: 650px;
   height: 200px;
   top: 50%;
-  left: 28%;
+  left: 20%;
   display: none;
   z-index: 999px;
 }
-/* line 156, ../../sass/style.scss */
+/* line 157, ../../sass/style.scss */
 .response-error-message .tooltip-inner {
-  width: 400px;
-  max-width: 400px;
+  width: 650px;
+  max-width: 650px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: box;
   width: 100%;
+  font-size: 24px;
   background-color: #c0392b;
 }
 
-/* line 165, ../../sass/style.scss */
+/* line 167, ../../sass/style.scss */
 .flaticon-blowfish:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 168, ../../sass/style.scss */
+/* line 170, ../../sass/style.scss */
 .flaticon-celebration:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 171, ../../sass/style.scss */
+/* line 173, ../../sass/style.scss */
 .flaticon-dog4:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 174, ../../sass/style.scss */
+/* line 176, ../../sass/style.scss */
 .flaticon-sheep1:before {
-  font-size: 50px;
+  font-size: 70px;
 }
 
-/* line 177, ../../sass/style.scss */
+/* line 179, ../../sass/style.scss */
 .flaticon-silhouette2:before {
+  font-size: 70px;
+}
+
+/* line 182, ../../sass/style.scss */
+.flaticon-phone13:before {
   font-size: 50px;
 }
