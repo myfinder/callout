@@ -4,6 +4,7 @@ requires 'Class::Accessor::Lite', 0;
 requires 'LWP::Protocol::https', 0;
 requires 'Plack::Handler::Corona',0;
 requires 'JSON::XS', 0;
+requires 'Types::Serialiser', 0;
 requires 'DBIx::Sunny',0;
 requires 'Object::Container',0;
 requires 'Lingua::JA::Moji',0;

@@ -9,11 +9,13 @@ use Class::Accessor::Lite (
 use LWP::UserAgent;
 use HTTP::Request::Common qw(GET POST);
 use JSON::XS;
+use Types::Serialiser;
 use Carp ();
 use URI;
 use URI::QueryParam;
 
 use constant SEND_ROOM_NOTIFICATION_URL => "https://api.hipchat.com/v2/room/%s/notification?auth_token=%s";
+use constant SEND_USER_NOTIFICATION_URL => "https://api.hipchat.com/v2/user/%s/message?auth_token=%s";
 use constant GET_ALL_USERS_URL          => "https://api.hipchat.com/v2/user?format=json&auth_token=%s";
 use constant VIEW_USER_URL              => "https://api.hipchat.com/v2/user/%s?auth_token=%s";
 use constant VIEW_HISTORY_URL           => "https://api.hipchat.com/v2/room/%s/history?auth_token=%s";
@@ -29,15 +31,39 @@ sub send_room_notification {
     my ($self,$args) = @_;
 
     my $message = $args->{message} or die 'require message';
+    my $mention = $args->{mention_name};
     my $room    = $args->{room}    or die 'require room';
     my $color   = $args->{color} // 'yellow';
 
     my $json = encode_json({
         color   => $color,
-        message => $message,
+        message_format => 'text',
+        notify => Types::Serialiser::true,
+        message => $mention ? sprintf('@%s %s', $mention, $message) : $message,
     });
 
     my $url = sprintf(SEND_ROOM_NOTIFICATION_URL,$room,$self->auth_token);
+
+    my $res = $self->client->request(
+        POST $url, 'content-type' => 'application/json',  Content => $json
+    );
+
+    unless( $res->is_success ) {
+        die $res->status_line;
+    }
+}
+
+sub send_user_notification {
+    my ($self,$args) = @_;
+
+    my $user_id = $args->{user_id} or die 'require user_id';
+    my $message = $args->{message} or die 'require message';
+
+    my $json = encode_json({
+        message => $message,
+    });
+
+    my $url = sprintf(SEND_USER_NOTIFICATION_URL,$user_id,$self->auth_token);
 
     my $res = $self->client->request(
         POST $url, 'content-type' => 'application/json',  Content => $json

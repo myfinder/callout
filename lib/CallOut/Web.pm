@@ -128,7 +128,21 @@ post '/message' => sub {
     my ($self,$c) = @_;
 
     eval {
-        container('hipchat')->send_room_notification({ room => config->{room}, message => $c->req->param('message') //'' });
+        container('hipchat')->send_room_notification(
+            {
+                room    => config->{room},
+                message => $c->req->param('message') // '',
+                mention_name => $c->req->param('mention_name') // undef,
+            }
+        );
+        if (my $user_id = $c->req->param('user_id')) {
+            container('hipchat')->send_user_notification(
+                {
+                    user_id => $user_id,
+                    message => $c->req->param('message') // '',
+                }
+            );
+        }
     };
 
     if($@) {
