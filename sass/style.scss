@@ -1,0 +1,176 @@
+@import "compass/css3";
+
+body {
+    background: rgba(0, 0, 0, 0.4);
+    background-color: #e67e22;
+    background-image: url(/img/greyzz.png);
+}
+
+form {
+    margin: 0px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1.title {
+    font: 450 45px/50px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    padding: 0 0 40px 0;
+
+    i {
+        color: #e67e22;
+    }
+    .flaticon-bell:before {
+        font-size: 60px;
+    }
+
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.office_visitors {
+    padding: 0 0 20px 0;
+
+    a {
+        @include box-shadow(rgba(0, 0, 0, .05) -2px 2px 0, rgba(255, 255, 255, .5) -2px 2px 0 inset);
+    }
+
+}
+
+.staff_visitors {
+    div {
+        margin-bottom: 10px;
+    }
+
+    a {
+        height: 100px;
+        line-height: 80px;
+        font-size: 18px;
+        @include box-shadow(rgba(0, 0, 0, .05) -2px 2px 0, rgba(255, 255, 255, .5) -2px 2px 0 inset);
+        background-color: #e67e22;
+    }
+
+    a:hover,
+    a:focus,
+    a:active  {
+        background-color: #d35400;
+    }
+
+     .start-index {
+        font-size: 32px;
+    }
+}
+
+ul#member-list {
+    :hover {
+        cursor: pointer;
+    }
+}
+
+li.member-box {
+    display: none;
+    list-style:none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    @include box-shadow(rgba(0, 0, 0, .05) -1px 1px 0, rgba(255, 255, 255, .5) -1px 1px 0 inset);
+    @include border-radius(3px);
+    padding: 10px;
+    margin: 0 0 10px 0;
+    background-color: #ecf0f1;
+
+    p {
+        margin: 1px;
+    }
+
+    .photo {
+        img {
+            width: 70px;
+            height: 70px;
+            border: 3px solid #fff;
+            background-color: #2c3e50;
+            @include border-radius(70px);
+        }
+    }
+
+    .email {
+        padding: 0 5px 0 0;
+    }
+}
+
+li.return-view-list {
+    text-align: center;
+    background-color: #95a5a6;
+}
+
+.response-message {
+    position: absolute;
+    width:320px;
+    height:200px;
+    top:50%;
+    left:35%;
+    display: none;
+    z-index: 999px;
+
+    .tooltip-arrow {
+        border-top-color: #27ae60 !important;
+    }
+
+    .tooltip-inner {
+        width: 320px;
+        max-width: 320px;
+        @include display-box;
+        width: 100%;
+        background-color: #27ae60;
+
+        .icon {
+            @include box-flex(1);
+            padding: 10px 5px 0px 10px;
+        }
+        .text {
+            @include box-flex(1);
+        }
+    }
+    .character {
+        position: absolute;
+        top: 55px;
+        left: 100px;
+    }
+}
+
+.response-error-message {
+    position: absolute;
+    width:400px;
+    height:200px;
+    top:50%;
+    left:28%;
+    display: none;
+    z-index: 999px;
+
+    .tooltip-inner {
+        width: 400px;
+        max-width: 400px;
+        @include display-box;
+        width: 100%;
+        background-color: #c0392b;
+    }
+}
+
+.flaticon-blowfish:before {
+    font-size: 50px;
+}
+.flaticon-celebration:before {
+    font-size: 50px;
+}
+.flaticon-dog4:before {
+    font-size: 50px;
+}
+.flaticon-sheep1:before {
+    font-size: 50px;
+}
+.flaticon-silhouette2:before {
+    font-size: 50px;
+}

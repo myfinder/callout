@@ -8,6 +8,7 @@ use JSON::XS;
 use CallOut::Config qw/config/;
 use CallOut::Container 'container';
 use CallOut::Cmd::Member;
+use CallOut::MemberIndex;
 use JSON;
 use LWP::UserAgent;
 
@@ -20,15 +21,15 @@ get '/admin/member/' => sub {
 get '/admin/syllabary/' => sub {
     my ($self, $c) = @_;
     my $syllabary = container('db')->select_all("
-        SELECT 
+        SELECT
             syllabary.*, member.name AS member_name
-        FROM syllabary 
-            JOIN syllabary_member ON syllabary_member.syllabary_id = syllabary.id    
+        FROM syllabary
+            JOIN syllabary_member ON syllabary_member.syllabary_id = syllabary.id
             JOIN member           ON syllabary_member.member_id    = member.id
             ORDER BY syllabary.name
-    "); 
-    
-    $c->render('/admin/syllabary/index.tx', { 
+    ");
+
+    $c->render('/admin/syllabary/index.tx', {
         syllabary => $syllabary,
     });
 };
@@ -36,14 +37,14 @@ get '/admin/syllabary/' => sub {
 get '/admin/member/show' => sub {
     my ($self, $c) = @_;
     my $member = container('db')->select_row("
-        SELECT member.* ,syllabary.name AS syllabary_name, syllabary.id AS syllabary_id 
-        FROM member 
-            JOIN syllabary_member ON member.id = syllabary_member.member_id 
-            JOIN syllabary        ON syllabary_member.syllabary_id = syllabary.id    
-        WHERE member.id = ?", $c->req->param('member_id') //'' ); 
+        SELECT member.* ,syllabary.name AS syllabary_name, syllabary.id AS syllabary_id
+        FROM member
+            JOIN syllabary_member ON member.id = syllabary_member.member_id
+            JOIN syllabary        ON syllabary_member.syllabary_id = syllabary.id
+        WHERE member.id = ?", $c->req->param('member_id') //'' );
 
-    $c->render('/admin/member/show.tx', { 
-        member => $member 
+    $c->render('/admin/member/show.tx', {
+        member => $member
     });
 };
 
@@ -53,7 +54,7 @@ post '/admin/member/syllabary/update' => sub {
     my $member_id      = $c->req->param('member_id') or die 'require member_id';
     my $syllabary_id   = $c->req->param('syllabary_id') or die 'require syllabary_id';
     my $syllabary_name = $c->req->param('syllabary_name') or die 'require syllabary_name';
- 
+
     my $syllabary = container('db')->select_row("SELECT * FROM syllabary WHERE name = ?", $syllabary_name);
 
     if( $syllabary ) {
@@ -74,7 +75,7 @@ post '/admin/member/syllabary/update' => sub {
         }
     }
 
-    container('db')->do("DELETE FROM syllabary WHERE id IN (SELECT id FROM syllabary WHERE id NOT IN (SELECT DISTINCT(syllabary_id) FROM syllabary_member))"); 
+    container('db')->do("DELETE FROM syllabary WHERE id IN (SELECT id FROM syllabary WHERE id NOT IN (SELECT DISTINCT(syllabary_id) FROM syllabary_member))");
 
     $c->redirect('/admin/member/show?member_id=' . $member_id);
 };
@@ -82,7 +83,21 @@ post '/admin/member/syllabary/update' => sub {
 get '/' => sub {
     my ($self, $c) = @_;
 
-    $c->render('index.tx', { users => container('db')->select_all("SELECT * FROM member") });
+    my $members = container('db')->select_all("
+                SELECT member.*, syllabary.name as syllabary_name
+                FROM member
+                    JOIN syllabary_member ON member.id = syllabary_member.member_id
+                    JOIN syllabary        ON syllabary_member.syllabary_id = syllabary.id");
+
+    for my $member ( @{$members} ) {
+        $member->{"index"} = CallOut::MemberIndex->get_index($member->{"syllabary_name"});
+        $member->{'photo_url'} =
+            $member->{'photo_url'} ? "https://s3-ap-northeast-1.amazonaws.com/" . $member->{'photo_url'} : "/img/company_logo_white.png"
+    }
+
+    $c->render('index.tx', { users => $members,
+                             syllabaries => container('db')->select_all("SELECT * FROM syllabary")
+                           });
 };
 
 get '/members' => sub {
@@ -102,11 +117,11 @@ get '/view_user' => sub {
     }
 
     if( config->{view_user} && ref(config->{view_user}->{permit_params}) eq 'ARRAY' ) {
-        $view_user = +{ map { $_ => $view_user->{$_} } @{config->{view_user}->{permit_params}} }; 
+        $view_user = +{ map { $_ => $view_user->{$_} } @{config->{view_user}->{permit_params}} };
     }
 
     $c->render_json($view_user);
-    
+
 };
 
 post '/message' => sub {

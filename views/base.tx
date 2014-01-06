@@ -1,13 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/flat-ui.css" rel="stylesheet" type="text/css">
+    <link href="/css/flaticon.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="/js/main.js"></script>
 
-<link href="/css/style.css" rel="stylesheet" type="text/css">
-<script src="/js/jquery.min.js"></script>
-
-<title></title>
+    <title>Freakout callout</title>
 </head>
-<body>
+<body class="container">
+    <h1 class="title">
+        <i class="flaticon-bell"></i>
+        callout!
+    </h1>
 
 : block content -> { }
 

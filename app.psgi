@@ -11,7 +11,7 @@ my $app = CallOut::Web->psgi($root_dir);
 builder {
     enable 'ReverseProxy';
     enable 'Static',
-    path => qr!^/(?:(?:css|js|img)/|favicon\.ico$)!,
+    path => qr!^/(?:(?:css|js|img|fonts)/|favicon\.ico$)!,
     root => $root_dir . '/public';
     $app;
 };

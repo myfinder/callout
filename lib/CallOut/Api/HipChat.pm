@@ -16,35 +16,35 @@ use URI::QueryParam;
 use constant SEND_ROOM_NOTIFICATION_URL => "https://api.hipchat.com/v2/room/%s/notification?auth_token=%s";
 use constant GET_ALL_USERS_URL          => "https://api.hipchat.com/v2/user?format=json&auth_token=%s";
 use constant VIEW_USER_URL              => "https://api.hipchat.com/v2/user/%s?auth_token=%s";
-use constant VIEW_HISTORY_URL           => "https://api.hipchat.com/v2/room/%s/history?auth_token=%s"; 
+use constant VIEW_HISTORY_URL           => "https://api.hipchat.com/v2/room/%s/history?auth_token=%s";
 use constant GET_ALL_ROOMS_URL          => "https://api.hipchat.com/v2/room?auth_token=%s";
 use constant GET_ROOM_URL               => "https://api.hipchat.com/v2/room/%s?auth_token=%s";
 
 sub client {
-    my $self = shift;        
+    my $self = shift;
     $self->{_client} //= LWP::UserAgent->new( agent => __PACKAGE__ );
 }
 
 sub send_room_notification {
     my ($self,$args) = @_;
 
-    my $message = $args->{message} or die 'require message'; 
-    my $room    = $args->{room}    or die 'require room'; 
+    my $message = $args->{message} or die 'require message';
+    my $room    = $args->{room}    or die 'require room';
     my $color   = $args->{color} // 'yellow';
 
     my $json = encode_json({
         color   => $color,
         message => $message,
-    });           
-    
+    });
+
     my $url = sprintf(SEND_ROOM_NOTIFICATION_URL,$room,$self->auth_token);
 
     my $res = $self->client->request(
-        POST $url, 'content-type' => 'application/json',  Content => $json 
+        POST $url, 'content-type' => 'application/json',  Content => $json
     );
 
     unless( $res->is_success ) {
-        die $res->status_line;         
+        die $res->status_line;
     }
 }
 
@@ -59,11 +59,11 @@ sub get_all_users {
             $uri->query_param_append($name,$args->{$name});
         }
     }
-   
+
     my $res = $self->client->get($uri->as_string);
 
     unless( $res->is_success ) {
-        die $res->status_line;         
+        die $res->status_line;
     }
 
     return decode_json($res->decoded_content);
@@ -80,11 +80,11 @@ sub get_all_rooms {
             $uri->query_param_append($name,$args->{$name});
         }
     }
-   
+
     my $res = $self->client->get($uri->as_string);
 
     unless( $res->is_success ) {
-        die $res->status_line;         
+        die $res->status_line;
     }
 
     return decode_json($res->decoded_content);
@@ -99,7 +99,7 @@ sub view_user {
 
     unless( $res->is_success ) {
         warn $res->decoded_content;
-        die $res->status_line;         
+        die $res->status_line;
     }
 
     return decode_json($res->decoded_content);
@@ -114,7 +114,7 @@ sub view_history {
 
     unless( $res->is_success ) {
         warn $res->decoded_content;
-        die $res->status_line;         
+        die $res->status_line;
     }
 
     return decode_json($res->decoded_content);
@@ -129,7 +129,7 @@ sub get_room {
 
     unless( $res->is_success ) {
         warn $res->decoded_content;
-        die $res->status_line;         
+        die $res->status_line;
     }
 
     return decode_json($res->decoded_content);
