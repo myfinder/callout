@@ -4,15 +4,17 @@
         <h4>弊社に御用の方</h4>
 
         <div class="row office_visitors">
-            <div class="col-sm-6 js-call">
+            <div class="col-sm-6 js-member-box">
                 <form method="post">
-                    <input type="hidden" name="message" value="@all 来客です。(郵便/配達/出入り業者)" />
+                    <input type="hidden" name="message" value="来客です。(郵便/配達/出入り業者)" />
+                    <input type="hidden" name="mention_name" value="here" />
                     <a class="btn btn-block btn-lg btn-inverse">郵便/配達/出入り業者</a>
                 </form>
             </div>
-            <div class="col-sm-6 js-call">
+            <div class="col-sm-6 js-member-box">
                 <form method="post">
-                    <input type="hidden" name="message" value="@all 来客です。(面接/インターン)" />
+                    <input type="hidden" name="message" value="来客です。(面接/インターン)" />
+                    <input type="hidden" name="mention_name" value="here" />
                     <a class="btn btn-block btn-lg btn-inverse">面接/インターン</a>
                 </form>
             </div>
@@ -122,6 +124,8 @@
     <li class="member-box row js-call"  data-syllabary-index="<: $user['index']:>" data-name="<: $user['name'] :>">
         <form method="post">
             <input type="hidden" name="message" value="<: $user['name'] :>さんに来客です" />
+            <input type="hidden" name="mention_name" value="<: $user['mention_name'] :>" />
+            <input type="hidden" name="user_id" value="<: $user['api_id'] :>" />
 
             <div class="photo col-sm-2">
                 <img src="<: $user['photo_url'] :>" />
@@ -129,7 +133,6 @@
             <div class="info col-sm-10">
                 <span class="name"><: $user['name'] :></span>
                 <p>
-                    <span class="title"><: $user['title'] :></span>
                     <span class="fui-mail"></span>
                     <span class="email"><: $user['email'] :></span>
                 </p>
