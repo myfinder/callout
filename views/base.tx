@@ -5,6 +5,12 @@
     <link href="/css/flat-ui.css" rel="stylesheet" type="text/css">
     <link href="/css/flaticon.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="/img/apple-touch-startup-image.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="/js/main.js"></script>
