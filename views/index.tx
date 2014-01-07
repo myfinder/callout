@@ -4,14 +4,14 @@
         <h4>弊社に御用の方</h4>
 
         <div class="row office_visitors">
-            <div class="col-sm-6 js-member-box">
+            <div class="col-sm-6 js-call">
                 <form method="post">
                     <input type="hidden" name="message" value="来客です。(郵便/配達/出入り業者)" />
                     <input type="hidden" name="mention_name" value="here" />
                     <a class="btn btn-block btn-lg btn-inverse">郵便/配達/出入り業者</a>
                 </form>
             </div>
-            <div class="col-sm-6 js-member-box">
+            <div class="col-sm-6 js-call">
                 <form method="post">
                     <input type="hidden" name="message" value="来客です。(面接/インターン)" />
                     <input type="hidden" name="mention_name" value="here" />
