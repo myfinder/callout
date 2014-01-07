@@ -30,6 +30,7 @@ $(function(){
 
         $("#character").removeClass();
         $("#character").addClass("character");
+        $(".overlay").show();
 
         $.post( "/message", params,
             function() {
@@ -39,13 +40,15 @@ $(function(){
                 $("#character").addClass("flaticon-" + characters[randnum]);
                 $("#character").effect("bounce", {}, 4000);
                 setTimeout(function(){
-                    $("#response-message").toggle("fade", {}, 1000);
+                    $("#response-message").fadeOut("slow");
+                    $(".overlay").hide();
                 },5000);
             })
             .fail(function() {
                 $("#response-error-message").show();
                 setTimeout(function(){
-                    $("#response-error-message").toggle("fade", {}, 1000);
+                    $("#response-error-message").fadeOut("slow");
+                    $(".overlay").hide();
                 },5000);
             })
             .always(function() {

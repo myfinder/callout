@@ -11,13 +11,17 @@
 
     <title>Freakout callout</title>
 </head>
-<body class="container">
-    <h1 class="title">
-        <i class="flaticon-bell"></i>
-        callout!
-    </h1>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="title">
+            <i class="flaticon-bell"></i>
+            callout!
+        </h1>
 
 : block content -> { }
 
+    </div>
+    
 </body>
 </html>
