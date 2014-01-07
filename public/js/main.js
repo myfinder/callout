@@ -49,7 +49,7 @@ $(function(){
                 setTimeout(function(){
                     $("#response-error-message").fadeOut("slow");
                     $(".overlay").hide();
-                },5000);
+                },10000);
             })
             .always(function() {
             });
