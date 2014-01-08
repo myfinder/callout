@@ -15,14 +15,14 @@
     <script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="/js/main.js"></script>
 
-    <title>Freakout callout</title>
+    <title>FreakOut callout</title>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="container">
         <h1 class="title">
             <i class="flaticon-bell"></i>
-            callout!
+            Welcome to FreakOut!
         </h1>
 
 : block content -> { }
